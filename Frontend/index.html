@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopMania – Compare & Save</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="left">
+      <img src="assets/logo_placeholder.png" alt="ShopMania Logo" class="logo-img" onerror="this.style.display='none'"/>
+      <div class="brand">
+        <span class="brand-name">ShopMania</span>
+        <span class="brand-tag">Compare & Save!</span>
+      </div>
+    </div>
+
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html" class="signup-btn">Signup</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1><b>ShopMania</b></h1>
+    <h1>Compare & Save</h1>
+    <p class="subtitle">Find the best deals across platforms</p>
+    <p class="subtitle" style="font-size: 1rem; margin-top: -20px;">Compare prices from Meesho, Myntra, and Shopsy all in one place. Never overpay again!</p>
+    
+    <div class="hero-search">
+      <input type="text" placeholder="Search for products..." id="heroSearchBar" />
+    </div>
+
+    <div class="hero-features">
+      <div class="feature">
+        <span>📈</span>
+        <span>Best Prices</span>
+      </div>
+      <div class="feature">
+        <span>🛍️</span>
+        <span>Multiple Platforms</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <section class="filters-section">
+      <div class="filter-label">
+        <span>⚙️</span>
+        <span>Filters & Sort</span>
+      </div>
+      <div class="filter-controls">
+        <select class="filter-dropdown" id="sortDropdown">
+          <option value="name">Name (A-Z)</option>
+          <option value="price-low">Price (Low to High)</option>
+          <option value="price-high">Price (High to Low)</option>
+        </select>
+        <select class="filter-dropdown" id="categoryDropdown">
+          <option value="all">All Categories</option>
+          <option value="fashion">Fashion</option>
+          <option value="electronics">Electronics</option>
+          <option value="accessories">Accessories</option>
+        </select>
+        <select class="filter-dropdown" id="platformDropdown">
+          <option value="all">All Platforms</option>
+          <option value="meesho">Meesho</option>
+          <option value="myntra">Myntra</option>
+          <option value="shopsy">Shopsy</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="products" class="products-grid" aria-live="polite">
+      <!-- products injected by script.js -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>About ShopMania</h4>
+        <p>ShopMania pulls together prices from Meesho, Myntra and Shopsy so you can compare, choose and save – fast.</p>
+      </div>
+      <div>
+        <h4>About the Creator</h4>
+        <p>Built by <strong>Sulekha Thakur</strong> – B.Sc. Computer Science student passionate about building neat, useful web apps.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      </div>
+      <div>
+        <h4>Get the app</h4>
+        <img src="assets/googleplay.png" alt="Google Play" onerror="this.style.display='none'">
+        <img src="assets/appstore.png" alt="App Store" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <div class="footer-bottom">© 2025 ShopMania | Crafted with 💖 by Sulekha Thakur</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

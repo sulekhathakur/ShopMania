@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Trendy Floral Kurti",
+    "category": "fashion",
+    "meesho": {
+      "price": 214,
+      "link": "https://www.meesho.com/daily-wear-kurtiregular-kurtifancy-kurticasualstylish-kurti/p/7gqevd",
+      "image": "assets/sample-products/kurti_meesho.avif"
+    },
+    "myntra": {
+      "price": 299,
+      "link": "https://www.myntra.com/kurtis/haritwal/haritwal-women-ethnic-motifs-printed-pure-cotton-kurti/34865101/buy",
+      "image": "assets/sample-products/kurti_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 228,
+      "link": "https://www.shopsy.in/women-printed-kurta/p/itm7efae89bf93ca?pid=KUUHD5WGYCUFSEHK&lid=LSTKUUHD5WGYCUFSEHKJPQ2MS&marketplace=FLIPKART",
+      "image": "assets/sample-products/kurti_shopsy.webp"
+    }
+  },
+  {
+    "name": "Men's Sneakers",
+    "category": "fashion",
+    "meesho": {
+      "price": 391,
+      "link": "https://www.meesho.com/sneakers/p/7xdkpv",
+      "image": "assets/sample-products/sneaker_meesho.avif"
+    },
+    "myntra": {
+      "price": 599,
+      "link": "https://www.myntra.com/casual-shoes/asian/asian-men-colourblocked-memory-foam-insole-sneakers/27255582/buy",
+      "image": "assets/sample-products/sneaker_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 243,
+      "link": "https://www.shopsy.in/fk-393-black-gold-running-sports-sneakers-men/p/itmd5719763cfc59?pid=EOEGCUPYWNPTGCGT",
+      "image": "assets/sample-products/sneaker_shopsy.webp"
+    }
+  },
+  {
+    "name": "Wireless Earbuds",
+    "category": "electronics",
+    "meesho": {
+      "price": 1199,
+      "link": "https://www.meesho.com/wireless-earbuds/p/example1",
+      "image": "assets/earbud_meesho.jpg"
+    },
+    "myntra": {
+      "price": 1349,
+      "link": "https://www.myntra.com/headphones/wireless-earbuds/example1",
+      "image": "assets/earbud_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 1100,
+      "link": "https://www.shopsy.in/wireless-earbuds/p/example1",
+      "image": "assets/earbud_shopsy.jpg"
+    }
+  },
+  {
+    "name": "Smartwatch",
+    "category": "electronics",
+    "meesho": {
+      "price": 1799,
+      "link": "https://www.meesho.com/smartwatch/p/example2",
+      "image": "assets/watch_meesho.jpg"
+    },
+    "myntra": {
+      "price": 1999,
+      "link": "https://www.myntra.com/watches/smartwatch/example2",
+      "image": "assets/watch_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 1899,
+      "link": "https://www.shopsy.in/smartwatch/p/example2",
+      "image": "assets/watch_shopsy.jpg"
+    }
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "category": "electronics",
+    "meesho": {
+      "price": 899,
+      "link": "https://www.meesho.com/bluetooth-speaker/p/example3",
+      "image": "assets/speaker_meesho.jpg"
+    },
+    "myntra": {
+      "price": 999,
+      "link": "https://www.myntra.com/speakers/bluetooth-speaker/example3",
+      "image": "assets/speaker_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 850,
+      "link": "https://www.shopsy.in/bluetooth-speaker/p/example3",
+      "image": "assets/speaker_shopsy.jpg"
+    }
+  },
+  {
+    "name": "Stylish Backpack",
+    "category": "accessories",
+    "meesho": {
+      "price": 799,
+      "link": "https://www.meesho.com/backpack/p/example4",
+      "image": "assets/backpack_meesho.jpg"
+    },
+    "myntra": {
+      "price": 749,
+      "link": "https://www.myntra.com/backpacks/stylish-backpack/example4",
+      "image": "assets/backpack_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 780,
+      "link": "https://www.shopsy.in/backpack/p/example4",
+      "image": "assets/backpack_shopsy.jpg"
+    }
+  },
+  {
+    "name": "Sunglasses",
+    "category": "accessories",
+    "meesho": {
+      "price": 599,
+      "link": "https://www.meesho.com/sunglasses/p/example5",
+      "image": "assets/sunglass_meesho.jpg"
+    },
+    "myntra": {
+      "price": 549,
+      "link": "https://www.myntra.com/sunglasses/stylish-sunglasses/example5",
+      "image": "assets/sunglass_myntra.jpg"
+    },
+    "shopsy": {
+      "price": 560,
+      "link": "https://www.shopsy.in/sunglasses/p/example5",
+      "image": "assets/sunglass_shopsy.jpg"
+    }
+  }
+]
