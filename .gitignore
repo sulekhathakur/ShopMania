@@ -1,0 +1,25 @@
+# ===============================
+# Build / Compiled files
+# ===============================
+target/
+*.class
+*.log
+*.jar
+
+# ===============================
+# IDE / Editor files
+# ===============================
+.idea/
+.vscode/
+*.iml
+
+# ===============================
+# OS files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Environment / Secrets
+# ===============================
+Backend/src/main/resources/application.properties

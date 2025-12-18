@@ -1,6 +1,9 @@
-package com.shopmania;
+package com.shopmania.service;
 
+import com.shopmania.entity.ProductEntity;
+import com.shopmania.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
