@@ -1,34 +1,27 @@
 package com.shopmania.controller;
 
 import com.shopmania.entity.ProductEntity;
-import com.shopmania.service.ProductService;
-import org.springframework.web.bind.annotation.*;
+import com.shopmania.repository.ProductRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products")
-@CrossOrigin(origins = "*")
+@RequestMapping("/api")
+@CrossOrigin(origins = "*")   // 👈 ADD HERE (class level)
 public class ProductController {
 
-    private final ProductService service;
+    private final ProductRepository productRepository;
 
-    public ProductController(ProductService service) {
-        this.service = service;
+    public ProductController(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
-    @GetMapping
+    @GetMapping("/products")
     public List<ProductEntity> getAllProducts() {
-        return service.getAll();
-    }
-
-    @GetMapping("/search")
-    public List<ProductEntity> search(@RequestParam String q) {
-        return service.search(q);
-    }
-
-    @GetMapping("/category/{category}")
-    public List<ProductEntity> byCategory(@PathVariable String category) {
-        return service.byCategory(category);
+        return productRepository.findAll();
     }
 }
