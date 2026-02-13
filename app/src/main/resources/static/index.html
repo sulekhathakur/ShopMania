@@ -20,6 +20,11 @@
       <a href="index.html">Home</a>
       <a href="login.html">Login</a>
       <a href="signup.html" class="signup-btn">Signup</a>
+
+      <!-- Cart Button -->
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
     </nav>
   </header>
 
@@ -28,7 +33,7 @@
     <h1>Compare & Save</h1>
     <p class="subtitle">Find the best deals across platforms</p>
     <p class="subtitle" style="font-size: 1rem; margin-top: -20px;">Compare prices from Meesho, Myntra, and Shopsy all in one place. Never overpay again!</p>
-    
+
     <div class="hero-search">
       <input type="text" placeholder="Search for products..." id="heroSearchBar" />
     </div>
@@ -77,6 +82,38 @@
     </section>
   </main>
 
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <h2>My Cart</h2>
+        <p class="cart-sub">Saved locally (demo-ready)</p>
+      </div>
+      <button class="cart-close" id="cartCloseBtn" type="button" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-body" id="cartItems">
+      <!-- items injected -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+
+      <div class="cart-actions">
+        <button class="cart-clear" id="cartClearBtn" type="button">Clear</button>
+        <button class="cart-checkout" type="button" id="cartCheckoutBtn">Checkout (Demo)</button>
+      </div>
+
+      <p class="cart-note">Checkout is a demo feature. Real payments not integrated.</p>
+    </div>
+  </aside>
+
+  <!-- Backdrop -->
+  <div class="cart-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -99,6 +136,10 @@
         <img src="assets/appstore.png" alt="App Store" onerror="this.style.display='none'">
       </div>
     </div>
+
+    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:12px;">
+      Prices are indicative and may vary on the seller’s website.
+    </p>
 
     <div class="footer-bottom">© 2025 ShopMania | Crafted with 💖 by Sulekha Thakur</div>
   </footer>
