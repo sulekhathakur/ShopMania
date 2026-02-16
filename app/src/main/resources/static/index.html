@@ -5,81 +5,202 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ShopMania – Compare & Save</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
-    <div class="left">
-      <img src="assets/logo_placeholder.png" alt="ShopMania Logo" class="logo-img" onerror="this.style.display='none'"/>
-      <div class="brand">
-        <span class="brand-name">ShopMania</span>
-        <span class="brand-tag">Compare & Save!</span>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo-icon">SM</div>
+          <div class="brand">
+            <span class="brand-name">ShopMania</span>
+            <span class="brand-tag">Compare & Save</span>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+          <a href="index.html" class="nav-link active">Home</a>
+          <!-- back to separate pages -->
+          <a href="login.html" class="nav-link">Login</a>
+          <a href="signup.html" class="nav-link signup-btn">Sign Up</a>
+
+          <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </nav>
       </div>
     </div>
-
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
-      <a href="signup.html" class="signup-btn">Signup</a>
-
-      <!-- Cart Button -->
-      <button class="cart-btn" id="cartBtn" type="button" aria-label="Open cart">
-        🛒 Cart <span class="cart-count" id="cartCount">0</span>
-      </button>
-    </nav>
   </header>
 
+  <!-- Hero Section with Background Image -->
   <section class="hero">
-    <h1><b>ShopMania</b></h1>
-    <h1>Compare & Save</h1>
-    <p class="subtitle">Find the best deals across platforms</p>
-    <p class="subtitle" style="font-size: 1rem; margin-top: -20px;">Compare prices from Meesho, Myntra, and Shopsy all in one place. Never overpay again!</p>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Find the Best Deals</h1>
+        <h2 class="hero-subtitle">Compare Prices Across Multiple Platforms</h2>
+        <p class="hero-description">
+          Compare prices from Meesho, Myntra, and Shopsy all in one place. Save time and money!
+        </p>
 
-    <div class="hero-search">
-      <input type="text" placeholder="Search for products..." id="heroSearchBar" />
-    </div>
+        <div class="hero-search">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" placeholder="Search for products..." id="heroSearchBar" />
+          <button class="search-btn">Search</button>
+        </div>
 
-    <div class="hero-features">
-      <div class="feature">
-        <span>📈</span>
-        <span>Best Prices</span>
-      </div>
-      <div class="feature">
-        <span>🛍️</span>
-        <span>Multiple Platforms</span>
+        <div class="hero-features">
+          <div class="feature-item">
+            <i class="fas fa-tags"></i>
+            <span>Best Prices</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-shopping-bag"></i>
+            <span>Multiple Platforms</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Secure Shopping</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <main class="main-content">
-    <section class="filters-section">
-      <div class="filter-label">
-        <span>⚙️</span>
-        <span>Filters & Sort</span>
-      </div>
-      <div class="filter-controls">
-        <select class="filter-dropdown" id="sortDropdown">
-          <option value="name">Name (A-Z)</option>
-          <option value="price-low">Price (Low to High)</option>
-          <option value="price-high">Price (High to Low)</option>
-        </select>
-        <select class="filter-dropdown" id="categoryDropdown">
-          <option value="all">All Categories</option>
-          <option value="fashion">Fashion</option>
-          <option value="electronics">Electronics</option>
-          <option value="accessories">Accessories</option>
-        </select>
-        <select class="filter-dropdown" id="platformDropdown">
-          <option value="all">All Platforms</option>
-          <option value="meesho">Meesho</option>
-          <option value="myntra">Myntra</option>
-          <option value="shopsy">Shopsy</option>
-        </select>
-      </div>
-    </section>
+  <!-- Hero Image Section -->
+  <section class="hero-image-section">
+    <div class="container">
+      <div class="hero-image-container">
+        <div class="hero-image-content">
+          <div class="hero-image-badge">
+            <i class="fas fa-bolt"></i>
+            <span>Fast & Easy Comparison</span>
+          </div>
+          <h3>Shop Smarter, Not Harder</h3>
+          <p>Compare prices from India's top e-commerce platforms in seconds. Save time, save money, shop with confidence.</p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Platforms</div>
+            </div>
+           <div class="stat-item">
+              <div class="stat-number">SMART</div>
+              <div class="stat-label">Comparison</div>
+            </div>
 
-    <section id="products" class="products-grid" aria-live="polite">
-      <!-- products injected by script.js -->
-    </section>
+
+            <div class="stat-item">
+              <div class="stat-number">50%</div>
+              <div class="stat-label">Avg Savings</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-visual">
+          <img src="assets/pic.jpg" alt="Shopping Experience" />
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories Carousel -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="section-title">Popular Categories</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev" id="prevBtn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="category-card">
+              <div class="category-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <h3>Fashion</h3>
+              <p>Latest trends & styles</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3>Electronics</h3>
+              <p>Top tech deals</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>Home & Living</h3>
+              <p>Decor & essentials</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <i class="fas fa-gem"></i>
+              </div>
+              <h3>Accessories</h3>
+              <p>Jewelry & more</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h3>Beauty</h3>
+              <p>Cosmetics & care</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                <i class="fas fa-shoe-prints"></i>
+              </div>
+              <h3>Footwear</h3>
+              <p>Shoes & sandals</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next" id="nextBtn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <section class="filters-section">
+        <div class="filter-header">
+          <h3><i class="fas fa-sliders-h"></i> Filters & Sort</h3>
+        </div>
+        <div class="filter-controls">
+          <select class="filter-dropdown" id="sortDropdown">
+            <option value="name">Sort by Name</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
+          <select class="filter-dropdown" id="categoryDropdown">
+            <option value="all">All Categories</option>
+            <option value="fashion">Fashion</option>
+            <option value="electronics">Electronics</option>
+            <option value="accessories">Accessories</option>
+          </select>
+          <select class="filter-dropdown" id="platformDropdown">
+            <option value="all">All Platforms</option>
+            <option value="meesho">Meesho</option>
+            <option value="myntra">Myntra</option>
+            <option value="shopsy">Shopsy</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="products" class="products-grid" aria-live="polite"></section>
+    </div>
   </main>
 
   <!-- Cart Drawer -->
@@ -87,14 +208,14 @@
     <div class="cart-header">
       <div>
         <h2>My Cart</h2>
-        <p class="cart-sub">Saved locally (demo-ready)</p>
+        <p class="cart-sub">Review your items</p>
       </div>
-      <button class="cart-close" id="cartCloseBtn" type="button" aria-label="Close cart">✕</button>
+      <button class="cart-close" id="cartCloseBtn" type="button" aria-label="Close cart">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
 
-    <div class="cart-body" id="cartItems">
-      <!-- items injected -->
-    </div>
+    <div class="cart-body" id="cartItems"></div>
 
     <div class="cart-footer">
       <div class="cart-total">
@@ -103,45 +224,92 @@
       </div>
 
       <div class="cart-actions">
-        <button class="cart-clear" id="cartClearBtn" type="button">Clear</button>
-        <button class="cart-checkout" type="button" id="cartCheckoutBtn">Checkout (Demo)</button>
+        <button class="cart-clear" id="cartClearBtn" type="button">
+          <i class="fas fa-trash"></i> Clear Cart
+        </button>
+        <button class="cart-checkout" type="button" id="cartCheckoutBtn">
+          <i class="fas fa-credit-card"></i> Checkout
+        </button>
       </div>
 
-      <p class="cart-note">Checkout is a demo feature. Real payments not integrated.</p>
+      <p class="cart-note">
+        <i class="fas fa-info-circle"></i> Checkout is a demo feature
+      </p>
     </div>
   </aside>
 
   <!-- Backdrop -->
   <div class="cart-backdrop" id="cartBackdrop" aria-hidden="true"></div>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <h4>About ShopMania</h4>
-        <p>ShopMania pulls together prices from Meesho, Myntra and Shopsy so you can compare, choose and save – fast.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>About ShopMania</h4>
+          <p>
+            ShopMania is your one-stop solution for comparing prices across leading e-commerce platforms.
+            Save time and money by finding the best deals from Meesho, Myntra, and Shopsy in one place.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Login</a></li>
+            <li><a href="signup.html"><i class="fas fa-chevron-right"></i> Sign Up</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:teamshomania@gmail.com">teamshomania@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 XXXXX XXXXX</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>About the Creator</h4>
+          <p>
+            Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> by
+            <strong>Sulekha Thakur</strong>, a B.Sc. Computer Science student passionate
+            about creating useful web applications.
+          </p>
+          <div class="app-badges">
+            <img src="assets/googleplay.png" alt="Google Play" onerror="this.style.display='none'" />
+            <img src="assets/appstore.png" alt="App Store" onerror="this.style.display='none'" />
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>About the Creator</h4>
-        <p>Built by <strong>Sulekha Thakur</strong> – B.Sc. Computer Science student passionate about building neat, useful web apps.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Signup</a>
-      </div>
-      <div>
-        <h4>Get the app</h4>
-        <img src="assets/googleplay.png" alt="Google Play" onerror="this.style.display='none'">
-        <img src="assets/appstore.png" alt="App Store" onerror="this.style.display='none'">
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShopMania. All rights reserved. Crafted by Sulekha Thakur</p>
+        <p class="disclaimer">
+          <i class="fas fa-exclamation-triangle"></i>
+          Prices shown are indicative and may vary on the seller's website
+        </p>
       </div>
     </div>
-
-    <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:12px;">
-      Prices are indicative and may vary on the seller’s website.
-    </p>
-
-    <div class="footer-bottom">© 2025 ShopMania | Crafted with 💖 by Sulekha Thakur</div>
   </footer>
 
   <script src="script.js" defer></script>

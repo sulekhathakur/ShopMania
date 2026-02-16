@@ -12,87 +12,81 @@
       align-items: center;
       justify-content: center;
       padding: 40px 20px;
-      background: linear-gradient(135deg, #10b981 0%, #a855f7 100%);
+      background: linear-gradient(135deg, #0ea5e9 0%, #6d28d9 55%, #ff1744 100%);
+
     }
-    
+
     .auth-card {
-      background: var(--bg-secondary);
+      background: rgba(255,255,255,0.95);
       padding: 40px;
       border-radius: 24px;
       width: 440px;
       max-width: 100%;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(168,85,247,0.2);
     }
-    
+
     .auth-card h2 {
-      color: var(--accent-primary);
+      color: #7e22ce;
       margin: 0 0 24px;
       font-size: 2rem;
       text-align: center;
       font-weight: 800;
+      font-family: Urbanist, sans-serif;
     }
-    
+
     .auth-card label {
       display: block;
       margin: 16px 0 8px;
       font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-primary);
+      font-weight: 700;
+      color: #1f1f2e;
     }
-    
+
     .auth-card input {
       width: 100%;
       padding: 14px 18px;
       border-radius: 12px;
-      border: 2px solid var(--border-color);
-      background: var(--bg-card);
-      color: var(--text-primary);
+      border: 2px solid rgba(168,85,247,0.2);
+      background: white;
+      color: #1f1f2e;
       font-size: 1rem;
       transition: all 0.2s ease;
     }
-    
+
     .auth-card input:focus {
       outline: none;
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+      border-color: #a855f7;
+      box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.12);
     }
-    
+
     .auth-btn {
       margin-top: 28px;
-      background: linear-gradient(135deg, var(--accent-primary), #059669);
+      background: linear-gradient(135deg, #a855f7, #ec4899);
       border: none;
       padding: 16px;
       border-radius: 12px;
-      font-weight: 700;
+      font-weight: 800;
       color: white;
       cursor: pointer;
       width: 100%;
       font-size: 1.05rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 10px 30px rgba(168,85,247,0.25);
     }
-    
-    .auth-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-    }
-    
+
+    .auth-btn:hover { transform: translateY(-2px); }
     .link-row {
       text-align: center;
       margin-top: 24px;
-      color: var(--text-secondary);
+      color: rgba(31,31,46,0.75);
       font-size: 0.95rem;
+      font-weight: 600;
     }
-    
     .link-row a {
-      color: var(--accent-primary);
+      color: #0ea5e9;
       text-decoration: none;
-      font-weight: 700;
-    }
-    
-    .link-row a:hover {
-      text-decoration: underline;
+      font-weight: 800;
     }
   </style>
 </head>
@@ -104,26 +98,24 @@
         <span class="brand-tag">Compare & Save!</span>
       </div>
     </div>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-    </nav>
+   
   </header>
 
   <main class="auth-wrap">
     <section class="auth-card">
-      <h2>Create Your Account 🎉</h2>
-      
+      <h2>Create Your Account </h2>
+
       <label for="name">Full Name</label>
       <input id="name" type="text" placeholder="Enter your name" />
-      
+
       <label for="email">Email Address</label>
       <input id="email" type="email" placeholder="you@example.com" />
-      
+
       <label for="password">Password</label>
       <input id="password" type="password" placeholder="Choose a strong password" />
-      
+
       <button class="auth-btn" id="signupBtn">Sign Up</button>
-      
+
       <div class="link-row">
         Already have an account? <a href="login.html">Login</a>
       </div>
@@ -131,28 +123,45 @@
   </main>
 
   <script>
-    document.getElementById('signupBtn').addEventListener('click', () => {
+    const btn = document.getElementById('signupBtn');
+
+    btn.addEventListener('click', async () => {
       const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
+      const email = document.getElementById('email').value.trim().toLowerCase();
       const password = document.getElementById('password').value;
-      
+
       if (!name || !email || !password) {
         alert('Please fill in all fields');
         return;
       }
-      
-      const users = JSON.parse(localStorage.getItem('shopmania_users') || '[]');
-      
-      if (users.find(u => u.email === email)) {
-        alert('An account with this email already exists. Please login.');
-        return;
+
+      btn.disabled = true;
+      btn.textContent = 'Creating...';
+
+      try {
+        const res = await fetch('/api/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          alert(data.message || 'Signup failed');
+          return;
+        }
+
+        alert(data.message || 'Signup successful!');
+        window.location.href = 'login.html';
+
+      } catch (err) {
+        console.error(err);
+        alert('Server error. Is Spring Boot running on 8080?');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Sign Up';
       }
-      
-      users.push({ name, email, password });
-      localStorage.setItem('shopmania_users', JSON.stringify(users));
-      
-      alert('Signup successful – you can now log in!');
-      window.location.href = 'login.html';
     });
   </script>
 </body>

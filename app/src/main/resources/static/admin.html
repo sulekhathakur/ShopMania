@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,54 +6,53 @@
   <title>ShopMania Admin</title>
   <link rel="stylesheet" href="admin.css" />
 </head>
+
 <body>
-  <div class="wrap">
+  <main class="wrap">
+
     <header class="top">
-      <div class="topLeft">
+      <div>
         <h1>ShopMania Admin</h1>
         <p>Update prices + links + images + last updated.</p>
       </div>
-      <button id="logoutBtn" class="btn dangerBtn">Logout</button>
+      <button id="logoutBtn" class="btn logout">Logout</button>
     </header>
 
-    <section class="keybox" id="keyBox">
+    <!-- ADMIN KEY -->
+    <section id="keyBox" class="card">
       <h2>Admin Key Required</h2>
-      <div class="keyRow">
-        <input id="adminKeyInput" type="password" placeholder="Enter admin key" />
-        <button id="loginBtn" class="btn">Enter Admin</button>
+
+      <div class="key-row">
+        <input id="adminKeyInput" type="password" placeholder="Enter admin key" autocomplete="off" />
+        <button id="loginBtn" class="btn primary">Enter Admin</button>
       </div>
+
       <p class="hint">
-        Tip: key is in <code>application.properties</code> (<b>shopmania.admin.key</b>)
+        Tip: key is in <b>application.properties</b> (shopmania.admin.key)
       </p>
-      <p id="keyError" class="errorText"></p>
+
+      <p id="keyError" class="error"></p>
     </section>
 
-    <main id="panel" class="panel hidden">
-      <div class="actions">
-        <button id="refreshBtn" class="btn">Refresh Products</button>
-        <button id="addBtn" class="btn">Add Product</button>
-      </div>
-
-      <div id="status" class="status"></div>
-
-      <div class="tableWrap">
-        <div class="tableHead">
-          <div class="h id">ID</div>
-          <div class="h name">Name</div>
-          <div class="h cat">Category</div>
-          <div class="h platform">Platform</div>
-          <div class="h price">Price</div>
-          <div class="h link">Link</div>
-          <div class="h img">Image</div>
-          <div class="h updated">Last Updated</div>
-          <div class="h action">Action</div>
+    <!-- PANEL -->
+    <section id="panel" class="card" style="display:none;">
+      <div class="panel-head">
+        <div>
+          <h2>Products</h2>
+          <p id="status"></p>
         </div>
 
-        <div id="rows" class="rows"></div>
+        <div class="panel-actions">
+          <button id="refreshBtn" class="btn ghost">Refresh Products</button>
+          <button id="addBtn" class="btn primary">Add Product</button>
+        </div>
       </div>
-    </main>
-  </div>
 
-  <script src="admin.js" defer></script>
+      <div id="productsGrid"></div>
+    </section>
+
+  </main>
+
+  <script src="admin.js"></script>
 </body>
 </html>

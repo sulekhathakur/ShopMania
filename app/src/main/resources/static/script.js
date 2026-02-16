@@ -1,3 +1,85 @@
+// ==============================
+// Carousel functionality (AUTO + BUTTONS) - FIXED
+// ==============================
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("carouselTrack");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const wrapper = document.querySelector(".carousel-wrapper");
+
+  if (!track || !prevBtn || !nextBtn || !wrapper) return;
+
+  let index = 0;
+  let autoTimer = null;
+
+  const cards = () => Array.from(track.querySelectorAll(".category-card"));
+
+  const goTo = (i) => {
+    const c = cards();
+    if (!c.length) return;
+
+    index = Math.max(0, Math.min(i, c.length - 1));
+    const targetLeft = c[index].offsetLeft;
+    const maxTranslate = Math.max(0, track.scrollWidth - wrapper.clientWidth);
+    const translateX = Math.min(targetLeft, maxTranslate);
+
+    track.style.transform = `translate3d(${-translateX}px, 0, 0)`;
+  };
+
+  const next = () => {
+    const c = cards();
+    if (!c.length) return;
+
+    if (index >= c.length - 1) goTo(0);
+    else goTo(index + 1);
+  };
+
+  const prev = () => {
+    const c = cards();
+    if (!c.length) return;
+
+    if (index <= 0) goTo(c.length - 1);
+    else goTo(index - 1);
+  };
+
+  const startAuto = () => {
+    stopAuto();
+    autoTimer = setInterval(next, 2500);
+  };
+
+  const stopAuto = () => {
+    if (autoTimer) clearInterval(autoTimer);
+    autoTimer = null;
+  };
+
+  prevBtn.addEventListener("click", () => {
+    stopAuto();
+    prev();
+    startAuto();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    stopAuto();
+    next();
+    startAuto();
+  });
+
+  const container = document.querySelector(".carousel-container");
+  if (container) {
+    container.addEventListener("mouseenter", stopAuto);
+    container.addEventListener("mouseleave", startAuto);
+  }
+
+  window.addEventListener("resize", () => goTo(index));
+
+  goTo(0);
+  startAuto();
+});
+
+
+// ==============================
+// Products + Filters + Cart Drawer (UNCHANGED)
+// ==============================
 document.addEventListener("DOMContentLoaded", () => {
   fetchProducts();
 
@@ -15,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Checkout is demo-only. Add payment gateway later if needed.");
   });
 
-  // ESC closes cart
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeCart();
   });
@@ -90,7 +171,6 @@ function minPrice(p) {
 
 function safeImg(src) {
   if (!src) return FALLBACK_IMG;
-  // supports "/assets/..." and "assets/..."
   return src.startsWith("/") ? src.slice(1) : src;
 }
 
@@ -126,7 +206,6 @@ function renderProducts(products) {
 
     const best = Math.min(...platforms.map(x => x.price));
     const bestPlatform = platforms.find(x => x.price === best) || platforms[0];
-
     const last = formatLastUpdated(p.lastUpdated);
 
     const card = document.createElement("article");
@@ -205,9 +284,8 @@ function addToCart(item) {
   const key = `${item.id}_${item.platformKey}`;
   const existing = cart.find(x => x.key === key);
 
-  if (existing) {
-    existing.qty += 1;
-  } else {
+  if (existing) existing.qty += 1;
+  else {
     cart.push({
       key,
       id: item.id,
@@ -266,7 +344,6 @@ function renderCart() {
     </div>
   `).join("");
 
-  // actions
   wrap.querySelectorAll(".cart-item").forEach(el => {
     const key = el.getAttribute("data-key");
     el.querySelectorAll("button[data-act]").forEach(btn => {

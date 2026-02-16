@@ -22,4 +22,5 @@ Thumbs.db
 # ===============================
 # Environment / Secrets
 # ===============================
-Backend/src/main/resources/application.properties
+app/src/main/resources/application.properties
+
