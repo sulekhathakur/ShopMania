@@ -123,7 +123,7 @@
 
     const data = await res.json();
     renderTable(data);
-    status.textContent = `Loaded ${data.length} products ✅`;
+    status.textContent = `Loaded ${data.length} products! ✅`;
   };
 
   loginBtn.addEventListener("click", async () => {
