@@ -1094,13 +1094,13 @@ body {
 .cart-item h4 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--gray-900);
+  color: var(--black-900);
   margin-bottom: var(--space-xs);
 }
 
 .cart-meta {
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: var(--black-600);
   font-weight: 500;
 }
 
